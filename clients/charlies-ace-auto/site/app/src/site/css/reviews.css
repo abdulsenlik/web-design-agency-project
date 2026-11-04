@@ -1,0 +1,315 @@
+/* Google reviews: score, breakdown bars, topic chips and a scroll-driven reel. */
+
+.rv {
+  overflow: hidden;
+}
+
+.rv__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.rv__rating {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0 0;
+}
+
+.rv__number {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(5rem, 11vw, 9rem);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.rv__meta {
+  display: grid;
+  gap: 0.6rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.rv__checked {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* Stars: an ink outline row with a red-free ivory fill row clipped to the rating. */
+.rv-stars {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.rv-stars__row {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.rv-stars__row svg {
+  display: block;
+}
+
+.rv-stars__row--base path {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.4;
+}
+
+.rv-stars__row--fill path {
+  fill: var(--ink);
+}
+
+.rv-stars__clip {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--fill);
+  overflow: hidden;
+}
+
+/* Bars */
+.rv-bars {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rv-bars__row {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.rv-bars__label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rv-bars__track {
+  position: relative;
+  display: block;
+  height: 6px;
+  background: var(--raised-2);
+  overflow: hidden;
+}
+
+.rv-bars__bar {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: scaleX(var(--w));
+  transform-origin: left center;
+}
+
+.rv-bars__row:first-child .rv-bars__bar {
+  background: var(--accent);
+}
+
+/* Topics */
+.rv__topics-label {
+  margin-top: 2.25rem;
+}
+
+.rv-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rv-topics li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.rv-topics__count {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reel: a plain scrollable row unless scroll-driven motion takes over. */
+.rv-reel {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.rv-reel__track {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0 var(--gutter);
+  list-style: none;
+  width: max-content;
+}
+
+.rv-card {
+  width: clamp(18rem, 30vw, 26rem);
+  flex: 0 0 auto;
+}
+
+.rv-card__fig {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  background: var(--raised);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.rv-card__fig:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
+}
+
+.rv-card__stars {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.rv-card__stars path {
+  fill: var(--ink);
+}
+
+.rv-card__quote {
+  flex: 1;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.rv-card__quote p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
+.rv-card__by {
+  display: grid;
+  gap: 0.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.rv-card__name {
+  font-weight: 600;
+}
+
+.rv-card__when {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.rv__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Motion: everything is fully rendered by default and only animates transform
+   where scroll-driven animations exist. */
+@supports (animation-timeline: view()) {
+  @keyframes rv-fill {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes rv-bar {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes rv-glide {
+    from {
+      transform: translateX(8vw);
+    }
+    to {
+      transform: translateX(calc(-1 * (100% - 100vw) - 8vw));
+    }
+  }
+
+  .rv-stars__clip {
+    transform-origin: left center;
+    animation: rv-fill linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+
+  .rv-bars__bar {
+    animation: rv-bar linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 35%;
+  }
+
+  @media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+    .rv-reel {
+      overflow-x: visible;
+    }
+
+    .rv-reel__track {
+      animation: rv-glide linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 0%;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .rv__head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .rv__rating {
+    gap: 1rem;
+  }
+
+  /* Phones: a native swipe row with snap instead of the scroll glide. */
+  .rv-reel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .rv-reel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rv-card {
+    width: 82vw;
+    scroll-snap-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 861px) {
+  .rv-reel__track {
+    width: auto;
+    flex-wrap: wrap;
+  }
+}

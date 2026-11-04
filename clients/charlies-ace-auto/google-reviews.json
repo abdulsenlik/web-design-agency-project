@@ -1,0 +1,64 @@
+{
+ "source": "Google Maps",
+ "listing_name": "Charlie's Ace Auto & Body Service",
+ "listing_url": "https://www.google.com/maps/place/?q=place_id:ChIJ1_EzJcOwD4gRLNQfHC9vqUc",
+ "maps_cid_url": "https://www.google.com/maps?cid=5163780695882978348",
+ "checked_at": "2026-10-23",
+ "rating": 4.7,
+ "count": 98,
+ "rating_distribution_dataforseo": {
+  "5": 88,
+  "4": 3,
+  "3": 1,
+  "2": 0,
+  "1": 5,
+  "votes_count": 97
+ },
+ "notes": "Signed-out headless Google Maps shows only 5 reviews; Sort, 'More' expansion and loading further reviews trigger a Google sign-in wall (not bypassed). Texts ending in '...' are truncated as displayed. Short link, address query and 'Charlie's Auto Service' query all resolve to this one listing (feature_id 0x880fb0c32533f1d7:0x47a96f2f1c1fd42c). Waze place id ChIJpQTxHcOwD4gRR9Iv8hWyymA is not the Google place id for this listing; Google place_id is ChIJ1_EzJcOwD4gRLNQfHC9vqUc.",
+ "overview_snippets_unattributed": [
+  "Work is always done quickly and prices are good.",
+  "I had an outstanding experience with this body/auto shop from start to finish."
+ ],
+ "reviews": [
+  {
+   "name": "Yu Kyung Yoon",
+   "stars": 5,
+   "when": "Edited 3 months ago",
+   "text": "I had an outstanding experience with this body/auto shop from start to finish. The owner, Charlie, truly went above and beyond throughout the entire repair process. In the midst of chaos with auto insurance after my car accident, he...",
+   "truncated": true,
+   "owner_response": "Thank you very much for taking the time to leave us a review.\nWe truly appreciate your valuable feedback and will continue to provide the best service possible"
+  },
+  {
+   "name": "Burak Gulsen",
+   "stars": 5,
+   "when": "3 years ago",
+   "text": "I recently had the pleasure of bringing my car to Charlies Auto Shop, and I couldn't be happier with the service I received. From the moment I walked in the door, I was greeted with a friendly smile and made to feel like a valued customer....",
+   "truncated": true,
+   "owner_response": null
+  },
+  {
+   "name": "Noel Timones",
+   "stars": 5,
+   "when": "2 months ago",
+   "text": "AWESOME CUSTOMER SERVICE, NICE FACILITY, NICE STAFF, & QUICK AUTO SERVICE TOO!!! I HIGHLY RECOMMEND!!!AAAA++++",
+   "truncated": false,
+   "owner_response": null
+  },
+  {
+   "name": "Alec Gee Gault",
+   "stars": 5,
+   "when": "4 months ago",
+   "text": "I came to Charlie when I needed a second opinion inspection on a broken catalytic converter, and while the car was done for, I’ve stayed for his phenomenal attention to detail. I returned for another second opinion inspection on a certified...",
+   "truncated": true,
+   "owner_response": "Thank you. We truly appreciate your review. We will continue striving to provide even better service in the future.\nThank you once again."
+  },
+  {
+   "name": "leroy young jr",
+   "stars": 5,
+   "when": "4 months ago",
+   "text": "Ace & Charlie, if you need body work auto work, that's the place to go, he's the cheapest in this area. He  half of what the other places charge in this area, the car look brand new. He has the best price in this area. You will Like his work and the cost",
+   "truncated": false,
+   "owner_response": null
+  }
+ ]
+}
