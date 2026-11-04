@@ -1,6 +1,6 @@
 # where the charlie's ace website code lives
 
-the site code is NOT in this github repo. it lives in higgsfield's own hosted git repo for the website.
+the source of truth is higgsfield's own hosted git repo for the website. a read-only mirror (commit `00708c4`) is in `site/` next to this file, so any agent can read the code without the higgsfield connector. edits must go through higgsfield to deploy.
 
 ## the live build (use this one)
 - live url: https://charlies-ace-auto-body.higgsfield.app (public, listed on the higgsfield feed)
